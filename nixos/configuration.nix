@@ -174,22 +174,6 @@
     };
   };
 
-  programs.git = {
-    enable = true;
-    userName = "Mike F.";
-    userEmail = "danno040@gmail.com";
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        side-by-side = true;
-        syntax-theme = "zenburn";
-      };
-    };
-
-   gitui.enable = true;
-  };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
