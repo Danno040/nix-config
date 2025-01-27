@@ -154,24 +154,40 @@
     zsh
     oh-my-zsh
     spaceship-prompt
+    delta
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];
 
+  programs.starship = {
+    enable = true;
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    history = {
-      append = true;
-      expireDuplicatesFirst = true;
-    };
 #    autosuggestion.enable = true;
 #    syntaxHighlighting.enable = true;
-    oh-my-zsh = {
+    ohMyZsh = {
       enable = true;
-      
       theme = "spaceship";
     };
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "Mike F.";
+    userEmail = "danno040@gmail.com";
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        side-by-side = true;
+        syntax-theme = "zenburn";
+      };
+    };
+
+   gitui.enable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
