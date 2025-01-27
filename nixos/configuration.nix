@@ -152,6 +152,7 @@
     git
     ghostty
     delta
+    dust
   ];
 
 
