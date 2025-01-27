@@ -67,6 +67,25 @@ autocmd FileType typescript hi link typescriptReserved Special
 '';
   };
 
+  programs.ripgrep.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "spaceship";
+    };
+  };
+  
+  programs.starship.enable = true;
+
+  programs.fzf = {
+    enable = true;
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.11";
 }

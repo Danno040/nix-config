@@ -131,9 +131,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mikef = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     description = "Mike f";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -141,6 +141,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -149,30 +150,10 @@
     wget
     rustup
     git
-    kmonad
     ghostty
-    zsh
-    oh-my-zsh
-    spaceship-prompt
     delta
   ];
 
-  environment.pathsToLink = [ "/share/zsh" ];
-
-  programs.starship = {
-    enable = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-#    autosuggestion.enable = true;
-#    syntaxHighlighting.enable = true;
-    ohMyZsh = {
-      enable = true;
-      theme = "spaceship";
-    };
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
