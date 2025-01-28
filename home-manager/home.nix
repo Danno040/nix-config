@@ -16,7 +16,6 @@
     # ./nvim.nix
   ];
 
-  # TODO: Set your username
   home = {
     username = "mikef";
     homeDirectory = "/home/mikef";
@@ -74,17 +73,30 @@ autocmd FileType typescript hi link typescriptReserved Special
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    envExtra = ''
+# Enable Ctrl-F and Ctrl-B to move forward and back
+bindkey '^F' vi-forward-blank-word
+bindkey '^B' vi-backward-blank-word
+    '';
+    plugins = [
+      {
+        name = "spaceship";
+        file = "share/zsh/themes/spaceship.zsh-theme";
+        src = pkgs.spaceship-prompt;
+      }
+    ];
     oh-my-zsh = {
       enable = true;
+      plugins = [ "git" "man" ];
       theme = "spaceship";
     };
   };
-  
-  programs.starship.enable = true;
 
   programs.fzf = {
     enable = true;
   };
+
+  programs.ghostty.enableZshIntegration = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.11";

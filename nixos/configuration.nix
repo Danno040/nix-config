@@ -153,6 +153,7 @@
     ghostty
     delta
     dust
+    spaceship-prompt
   ];
 
 
