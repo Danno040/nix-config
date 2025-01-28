@@ -33,7 +33,6 @@
   programs.git = {
     enable = true;
     userName = "Mike F.";
-    userEmail = "danno040@gmail.com";
     delta = {
       enable = true;
       options = {
